@@ -14,6 +14,12 @@ public class estetica {
 		}
 	}
 	
+	public void limpiarSM(String simbolo, int lineas){
+		for (int i=0; i<lineas; i++){
+			System.out.print(simbolo);
+		}
+	}
+	
 	public void credito(){
 		limpiarln(25);
 		

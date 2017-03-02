@@ -82,7 +82,14 @@ public class Aplicacion {
 		System.out.println("Vamos a consultar la compatiblidad entre una llave y cerradura");
 		System.out.println("Selecciona cual de estas llaves quieres comprobar");
 		mostrar(1,llaves.size());
+		int llaveSEL = entrada.nextInt();
+		System.out.println("Selecciona cual de estas cerraduras quieres comprobar");
+		mostrar(2, cerraduras.size());
+		int cerraduraSEL = entrada.nextInt();
 		
+		//Restamos valores a valores reales
+		llaveSEL--;
+		cerraduraSEL--;
 		
 	}
 	
@@ -96,9 +103,24 @@ public class Aplicacion {
 			//Ver llaves
 			for (int i=0; i<num; i++){
 				ds.limpiarln(25);
-				System.out.println("Numero de llave: " + i);
+				System.out.println("Numero de llave: " + (1+i));
 				System.out.println("Nombre llave: " + llaves.get(i).nombre);
 				System.out.println("Nº pines: " + llaves.get(i).pines.length);
+				
+				//Imprimir pines
+				int largo = llaves.get(i).pines.length * 4;
+				ds.limpiarSM("#", largo);
+				System.out.println("");
+				for (int b=0; b<llaves.get(i).pines.length;b++){
+					System.out.print(b+1 + " | ");
+				}
+				System.out.println("");
+				for (int b=0; b<llaves.get(i).pines.length;b++){
+					System.out.print(llaves.get(i).pines[b] + " | ");
+				}
+				System.out.println("");
+				ds.limpiarSM("#", largo);
+				System.out.println("");
 			}
 			ds.limpiarln(25);
 			break;
@@ -106,9 +128,24 @@ public class Aplicacion {
 			//Ver cerrojos
 			for (int i=0; i<num; i++){
 				ds.limpiarln(25);
-				System.out.println("Numero de cerradura: " + i);
+				System.out.println("Numero de cerradura: " + (i+1));
 				System.out.println("Nombre cerradura: " + cerraduras.get(i).nombre);
 				System.out.println("Nº bombines: " + cerraduras.get(i).bombines.length);
+				
+				//Imprimir bombines
+				int largo = cerraduras.get(i).bombines.length * 4;
+				ds.limpiarSM("#", largo);
+				System.out.println("");
+				for (int b=0; b<cerraduras.get(i).bombines.length;b++){
+					System.out.print(b+1 + " | ");
+				}
+				System.out.println("");
+				for (int b=0; b<cerraduras.get(i).bombines.length;b++){
+					System.out.print(cerraduras.get(i).bombines[b] + " | ");
+				}
+				System.out.println("");
+				ds.limpiarSM("#", largo);
+				System.out.println("");
 			}
 			ds.limpiarln(25);
 			break;

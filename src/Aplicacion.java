@@ -91,8 +91,35 @@ public class Aplicacion {
 		llaveSEL--;
 		cerraduraSEL--;
 		
-		System.out.println("La llave nº" + llaveSEL);
-		System.out.println("La cerradura nº " + cerraduraSEL);
+		System.out.println("La llave nº " + (llaveSEL+1));
+		mostrar(3,llaveSEL);
+		System.out.println("La cerradura nº " + (cerraduraSEL+1));
+		mostrar(4, cerraduraSEL);
+		
+		//Comrpobar si numero de pines & bombinas coinciden
+		if (llaves.get(llaveSEL).pines.length == cerraduras.get(cerraduraSEL).bombines.length){
+			System.out.println("La llave puede entrar en la cerradura");
+			int pines = llaves.get(llaveSEL).pines.length;
+			boolean[] combinaciones = new boolean[pines];
+			
+			//Comprueba valores
+			for (int i=0; i<pines; i++){
+				if ((llaves.get(llaveSEL).pines[i] + cerraduras.get(cerraduraSEL).bombines[i]) == 10){
+					combinaciones[i] = true;
+				}	else	{
+					combinaciones[i] = false;
+				}
+			}
+			
+			for (int i=0; i<combinaciones.length; i++){
+				if (combinaciones[i] != true){
+					System.out.println("Pero no es compatible en el pin nº " + (i+1));
+				}
+			}
+			
+		}	else	{
+			System.out.println("La llave no encaja en la cerradura");
+		}
 	}
 	
 	public static void eliminar(){
@@ -150,6 +177,50 @@ public class Aplicacion {
 				System.out.println("");
 			}
 			ds.limpiarln(25);
+			break;
+		case 3:
+			//Ver llave especifica
+			ds.limpiarln(25);
+			System.out.println("Numero de llave: " + (num));
+			System.out.println("Nombre llave: " + llaves.get(num).nombre);
+			System.out.println("Nº pines: " + llaves.get(num).pines.length);
+			
+			//Imprimir bombines
+			int largoL = llaves.get(num).pines.length * 4;
+			ds.limpiarSM("#", largoL);
+			System.out.println("");
+			for (int b=0; b<llaves.get(num).pines.length;b++){
+				System.out.print(b+1 + " | ");
+			}
+			System.out.println("");
+			for (int b=0; b<llaves.get(num).pines.length;b++){
+				System.out.print(llaves.get(num).pines[b] + " | ");
+			}
+			System.out.println("");
+			ds.limpiarSM("#", largoL);
+			System.out.println("");
+			break;
+		case 4:
+			//Ver cerradura especifica
+			ds.limpiarln(25);
+			System.out.println("Numero de cerradura: " + (num));
+			System.out.println("Nombre cerradura: " + cerraduras.get(num).nombre);
+			System.out.println("Nº bombines: " + cerraduras.get(num).bombines.length);
+			
+			//Imprimir bombines
+			int largoC = cerraduras.get(num).bombines.length * 4;
+			ds.limpiarSM("#", largoC);
+			System.out.println("");
+			for (int b=0; b<cerraduras.get(num).bombines.length;b++){
+				System.out.print(b+1 + " | ");
+			}
+			System.out.println("");
+			for (int b=0; b<cerraduras.get(num).bombines.length;b++){
+				System.out.print(cerraduras.get(num).bombines[b] + " | ");
+			}
+			System.out.println("");
+			ds.limpiarSM("#", largoC);
+			System.out.println("");
 			break;
 		}
 	}

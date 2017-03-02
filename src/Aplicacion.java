@@ -91,6 +91,8 @@ public class Aplicacion {
 		llaveSEL--;
 		cerraduraSEL--;
 		
+		System.out.println("La llave nº" + llaveSEL);
+		System.out.println("La cerradura nº " + cerraduraSEL);
 	}
 	
 	public static void eliminar(){

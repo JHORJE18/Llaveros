@@ -77,11 +77,42 @@ public class Aplicacion {
 	}
 	
 	public static void consultar(){
-		System.out.println("Consulatando compatiblidad");
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Vamos a consultar la compatiblidad entre una llave y cerradura");
+		System.out.println("Selecciona cual de estas llaves quieres comprobar");
+		mostrar(1,llaves.size());
+		
+		
 	}
 	
 	public static void eliminar(){
 		System.out.println("Eliminando llave / cerrojo");
+	}
+	
+	public static void mostrar(int ver, int num){
+		switch (ver){
+		case 1:
+			//Ver llaves
+			for (int i=0; i<num; i++){
+				ds.limpiarln(25);
+				System.out.println("Numero de llave: " + i);
+				System.out.println("Nombre llave: " + llaves.get(i).nombre);
+				System.out.println("Nº pines: " + llaves.get(i).pines.length);
+			}
+			ds.limpiarln(25);
+			break;
+		case 2:
+			//Ver cerrojos
+			for (int i=0; i<num; i++){
+				ds.limpiarln(25);
+				System.out.println("Numero de cerradura: " + i);
+				System.out.println("Nombre cerradura: " + cerraduras.get(i).nombre);
+				System.out.println("Nº bombines: " + cerraduras.get(i).bombines.length);
+			}
+			ds.limpiarln(25);
+			break;
+		}
 	}
 	
 	public static boolean confirmar(String mensaje){

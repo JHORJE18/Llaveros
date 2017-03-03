@@ -48,6 +48,7 @@ public class Aplicacion {
 
 	public static void registrar(){
 		Scanner entrada = new Scanner(System.in);
+      ds.limpiarln(25);
 		System.out.println("¿Que quieres registrar?");
 		System.out.println("1. Nueva llave");
 		System.out.println("2. Nueva cerradura");

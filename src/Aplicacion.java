@@ -20,7 +20,6 @@ public class Aplicacion {
 	
 	public static void menu(){
 		Scanner entrada = new Scanner(System.in);
-		ds.limpiarln(25);
 		System.out.println("Introduce lo que deseas realizar");
 		System.out.println("1. Registrar Llavero / Cerradura");
 		System.out.println("2. Consultar compatiblidad llavero y cerradura");
@@ -74,7 +73,7 @@ public class Aplicacion {
 			//AÃ±adimos nueva llave
 			cerraduras.add(new Cerradura(bombines));
 			
-			System.out.println("Has registrado una cerradura: " + cerraduras.get(cerraduras.size()-1) + ", con " + cerraduras.get(cerraduras.size()-1).bombines.length + " bombines");
+			System.out.println("Has registrado una cerradura: " + cerraduras.get(cerraduras.size()-1).nombre + ", con " + cerraduras.get(cerraduras.size()-1).bombines.length + " bombines");
 			break;
 		}
 	}
@@ -94,9 +93,9 @@ public class Aplicacion {
 		llaveSEL--;
 		cerraduraSEL--;
 		
-		System.out.println("La llave nÂº " + (llaveSEL+1));
+		System.out.println("La llave nº " + (llaveSEL+1));
 		mostrar(3,llaveSEL);
-		System.out.println("La cerradura nÂº " + (cerraduraSEL+1));
+		System.out.println("La cerradura nº " + (cerraduraSEL+1));
 		mostrar(4, cerraduraSEL);
 		
 		//Comrpobar si numero de pines & bombinas coinciden
@@ -116,7 +115,7 @@ public class Aplicacion {
 			
 			for (int i=0; i<combinaciones.length; i++){
 				if (combinaciones[i] != true){
-					System.out.println("Pero no es compatible en el pin nÂº " + (i+1));
+					System.out.println("Pero no es compatible en el pin nº " + (i+1));
 				}
 			}
 			
@@ -147,6 +146,7 @@ public class Aplicacion {
 					System.out.print(b+1 + " | ");
 				}
 				System.out.println("");
+				ds.limpiarln(largo);
 				for (int b=0; b<llaves.get(i).pines.length;b++){
 					System.out.print(llaves.get(i).pines[b] + " | ");
 				}
@@ -172,6 +172,7 @@ public class Aplicacion {
 					System.out.print(b+1 + " | ");
 				}
 				System.out.println("");
+				ds.limpiarln(largo);
 				for (int b=0; b<cerraduras.get(i).bombines.length;b++){
 					System.out.print(cerraduras.get(i).bombines[b] + " | ");
 				}
@@ -196,6 +197,7 @@ public class Aplicacion {
 				System.out.print(b+1 + " | ");
 			}
 			System.out.println("");
+			ds.limpiarln(largoL);
 			for (int b=0; b<llaves.get(num).pines.length;b++){
 				System.out.print(llaves.get(num).pines[b] + " | ");
 			}
@@ -208,7 +210,7 @@ public class Aplicacion {
 			ds.limpiarln(25);
 			System.out.println("Numero de cerradura: " + (num));
 			System.out.println("Nombre cerradura: " + cerraduras.get(num).nombre);
-			System.out.println("NÂº bombines: " + cerraduras.get(num).bombines.length);
+			System.out.println("Nº bombines: " + cerraduras.get(num).bombines.length);
 			
 			//Imprimir bombines
 			int largoC = cerraduras.get(num).bombines.length * 4;
@@ -233,7 +235,7 @@ public class Aplicacion {
 		
 		boolean valido = false;
 		while (!valido){
-			System.out.println("Â¿Estas seguro de que quieres " + mensaje + "?");
+			System.out.println("¿Estas seguro de que quieres " + mensaje + "?");
 			System.out.println("1. Si, quiero " + mensaje);
 			System.out.println("2. No quiero " + mensaje);
 			int escrito = entrada.nextInt();

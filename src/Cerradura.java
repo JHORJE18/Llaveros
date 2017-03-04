@@ -14,7 +14,7 @@ public class Cerradura {
 		nombre = entrada.nextLine();
 		
 		for (int i=0; i<bombines.length; i++){
-			System.out.println("Introduce el bombin nÂº" + (i+1));
+			System.out.println("Introduce el bombin nº" + (i+1));
 			bombines[i] = entrada.nextInt();
 		}
 	}

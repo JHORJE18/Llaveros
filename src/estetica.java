@@ -24,7 +24,7 @@ public class estetica {
 		limpiarln(25);
 		
 		limpiar(5);
-		System.out.print("Jorge López Gil");
+		System.out.print("Jorge Lopez Gil");
 		limpiarln(5);
 		
 		limpiarln(25);

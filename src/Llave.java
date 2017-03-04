@@ -14,7 +14,7 @@ public class Llave {
 		nombre = entrada.nextLine();
 		
 		for (int i=0; i<pines.length; i++){
-			System.out.println("Introduce el pin nÂº" + (i+1));
+			System.out.println("Introduce el pin nº" + (i+1));
 			pines[i] = entrada.nextInt();
 		}
 	}

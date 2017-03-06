@@ -51,7 +51,7 @@ public class Aplicacion {
 	public static void registrar(){
 		Scanner entrada = new Scanner(System.in);
       ds.limpiarln(25);
-		System.out.println("¿Que quieres registrar?");
+		System.out.println("Â¿Que quieres registrar?");
 		System.out.println("1. Nueva llave");
 		System.out.println("2. Nueva cerradura");
 		System.out.println("3. Volver a atras");
@@ -59,7 +59,7 @@ public class Aplicacion {
 		
 		switch(escrito){
 		case 1:
-			System.out.println("¿Cuantos pines tiene la llave que quieres registrar?");
+			System.out.println("Â¿Cuantos pines tiene la llave que quieres registrar?");
 			int pines = entrada.nextInt();
 			int[] llaveTEMP = new int[pines];
 			//AÃ±adimos nueva llave
@@ -68,7 +68,7 @@ public class Aplicacion {
 			System.out.println("Has registrado una llave: " + llaves.get(llaves.size()-1).nombre + ", con " + llaves.get(llaves.size()-1).pines.length + " pines");
 			break;
 		case 2:
-			System.out.println("¿Cuantos bombines tiene la cerradura que quieres registrar?");
+			System.out.println("Â¿Cuantos bombines tiene la cerradura que quieres registrar?");
 			int bombines = entrada.nextInt();
 			int[] cerraduraTEMP = new int[bombines];
 			//AÃ±adimos nueva llave
@@ -95,9 +95,9 @@ public class Aplicacion {
 			llaveSEL--;
 			cerraduraSEL--;
 			
-			System.out.println("La llave nº " + (llaveSEL+1));
+			System.out.println("La llave n " + (llaveSEL+1));
 			mostrar(3,llaveSEL);
-			System.out.println("La cerradura nº " + (cerraduraSEL+1));
+			System.out.println("La cerradura n " + (cerraduraSEL+1));
 			mostrar(4, cerraduraSEL);
 			
 			//Comrpobar si numero de pines & bombinas coinciden
@@ -117,9 +117,9 @@ public class Aplicacion {
 				
 				for (int i=0; i<combinaciones.length; i++){
 					if (combinaciones[i] != true){
-						System.out.println("Pero el pin nº " + (i+1) + " no encaja");
+						System.out.println("Pero el pin n " + (i+1) + " no encaja");
 					}	else	{
-						System.out.println("El pin nº " + (i+1) + " encaja");
+						System.out.println("El pin n " + (i+1) + " encaja");
 					}
 				}
 				
@@ -135,7 +135,7 @@ public class Aplicacion {
 	public static void eliminar(){
 		Scanner entrada = new Scanner(System.in);
 		
-		System.out.println("¿Que quieres eliminar?");
+		System.out.println("Â¿Que quieres eliminar?");
 		System.out.println("1. Eliminar llave");
 		System.out.println("2. Eliminar cerrojo");
 		System.out.println("3. Eliminar TODO los registros del sistema");
@@ -145,7 +145,7 @@ public class Aplicacion {
 		switch (elimina){
 		case 1:
 			if (llaves.size() > 0){
-				System.out.println("¿Que llave quieres eliminar?");
+				System.out.println("Â¿Que llave quieres eliminar?");
 				mostrar(1,llaves.size());
 				int llaveDEL = entrada.nextInt();
 				
@@ -156,7 +156,7 @@ public class Aplicacion {
 					System.out.println("La llave " + llaves.get(llaveDEL).nombre + " ha sido eliminada correctamente del sistema");
 					llaves.remove(llaveDEL);
 				}	else	{
-					System.out.println("Se ha cancelado la eliminación de la llave " + llaves.get(llaveDEL));
+					System.out.println("Se ha cancelado la eliminacion de la llave " + llaves.get(llaveDEL));
 				}
 			}	else	{
 				System.out.println("No hay ninguna llave en los registros");
@@ -164,7 +164,7 @@ public class Aplicacion {
 			break;
 		case 2:
 			if (cerraduras.size() > 0){
-				System.out.println("¿Que llave quieres eliminar?");
+				System.out.println("Â¿Que llave quieres eliminar?");
 				mostrar(2, cerraduras.size());
 				int cerraduraDEL = entrada.nextInt();
 				
@@ -175,7 +175,7 @@ public class Aplicacion {
 					System.out.println("La cerradura " + cerraduras.get(cerraduraDEL).nombre + " ha sido eliminada correctamente del sistema");
 					cerraduras.remove(cerraduraDEL);
 				}	else	{
-					System.out.println("Se ha cancelado la eliminación de la cerradura " + cerraduras.get(cerraduraDEL));
+					System.out.println("Se ha cancelado la eliminacion de la cerradura " + cerraduras.get(cerraduraDEL));
 				}
 			}	else	{
 				System.out.println("No hay ninguna cerradura en los registros");
@@ -192,7 +192,7 @@ public class Aplicacion {
 					System.out.println(numLL + " llaves han sido eliminadas del sistema");
 					System.out.println(numCER + " cerraduras han sido eliminadas del sistema");
 				}	else	{
-					System.out.println("Se ha cancelado la eliminación de todos los registros del sistema");
+					System.out.println("Se ha cancelado la eliminacion de todos los registros del sistema");
 				}
 			}	else	{
 				System.out.println("No hay ninguna llave o cerradura registrada, asegurate de tener al menos una cerradura y una llave registrada");
@@ -209,7 +209,7 @@ public class Aplicacion {
 				ds.limpiarln(25);
 				System.out.println("Numero de llave: " + (1+i));
 				System.out.println("Nombre llave: " + llaves.get(i).nombre);
-				System.out.println("Nº pines: " + llaves.get(i).pines.length);
+				System.out.println("N pines: " + llaves.get(i).pines.length);
 				
 				//Imprimir pines
 				int largo = llaves.get(i).pines.length * 4;
@@ -235,7 +235,7 @@ public class Aplicacion {
 				ds.limpiarln(25);
 				System.out.println("Numero de cerradura: " + (i+1));
 				System.out.println("Nombre cerradura: " + cerraduras.get(i).nombre);
-				System.out.println("Nº bombines: " + cerraduras.get(i).bombines.length);
+				System.out.println("N bombines: " + cerraduras.get(i).bombines.length);
 				
 				//Imprimir bombines
 				int largo = cerraduras.get(i).bombines.length * 4;
@@ -260,7 +260,7 @@ public class Aplicacion {
 			ds.limpiarln(25);
 			System.out.println("Numero de llave: " + (num));
 			System.out.println("Nombre llave: " + llaves.get(num).nombre);
-			System.out.println("Nº pines: " + llaves.get(num).pines.length);
+			System.out.println("N pines: " + llaves.get(num).pines.length);
 			
 			//Imprimir bombines
 			int largoL = llaves.get(num).pines.length * 4;
@@ -283,7 +283,7 @@ public class Aplicacion {
 			ds.limpiarln(25);
 			System.out.println("Numero de cerradura: " + (num));
 			System.out.println("Nombre cerradura: " + cerraduras.get(num).nombre);
-			System.out.println("Nº bombines: " + cerraduras.get(num).bombines.length);
+			System.out.println("N bombines: " + cerraduras.get(num).bombines.length);
 			
 			//Imprimir bombines
 			int largoC = cerraduras.get(num).bombines.length * 4;
@@ -308,7 +308,7 @@ public class Aplicacion {
 		
 		boolean valido = false;
 		while (!valido){
-			System.out.println("¿Estas seguro de que quieres " + mensaje + "?");
+			System.out.println("Â¿Estas seguro de que quieres " + mensaje + "?");
 			System.out.println("1. Si, quiero " + mensaje);
 			System.out.println("2. No quiero " + mensaje);
 			int escrito = entrada.nextInt();
